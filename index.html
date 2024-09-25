@@ -97,11 +97,30 @@
     width: 0;
   }
 }
+/* CSS for 3D rotation animation */
+@keyframes rotate {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+
+.rotate-animation {
+  animation: rotate 10s linear infinite;
+}
+
+/* Optional: Speed up on hover */
+.rotate-animation:hover {
+  animation: rotate 5s linear infinite;
+}
 
 
 /* Adjust image size */
 .one-third {
-  height: 40px; /* Adjust this height as needed */
+  height: 80px; /* Adjust this height as needed */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center; /* Position the image towards the top center */
@@ -142,6 +161,8 @@
 }
 
 
+
+
 </style>
 
 
@@ -177,7 +198,7 @@
 	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/Picture31.png);">
 	          	 <div class="overlay"></div>
 	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '80%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
 			            <h1 class="mb-4 mt-3">I'm <span>Asif Shaikh</span></h1>
@@ -225,7 +246,7 @@
 						<br>
 			            <p><a href="https://www.linkedin.com/in/asif-shaikh1301/" class="btn btn-primary py-3 px-4">linkedin</a> 
 							<a href="https://github.com/AAS786" class="btn btn-white btn-outline-white py-3 px-4">My works</a>
-							 <a href="#" class="btn btn-success py-3 px-4">Hire Me</a></p>
+							<a href="#" class="btn btn-success py-3 px-4" onclick="toggleContactInfo()">Hire Me</a></p>
 		            </div>
 		          </div>
 	        	</div>
@@ -233,8 +254,6 @@
 	      </div>
 		</div>
     </section>
-
-
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
@@ -330,7 +349,7 @@
 									<li class="d-flex"><span>IT Course:</span> <span> Completed Data Analytics & Data Science with AI </span></li>
 									<li class="d-flex"><span>Language:</span> <span>English, Hindi</span></li>
 									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI &amp; Tableau</span></li>
-									<li class="d-flex"><span>Other Skills:</span> <span>  Excel,SQL, Team Work,Operations &amp; Power BI </span></li>
+									<li class="d-flex"><span>Other Skills:</span> <span>  Excel, SQL, Team Work, Operations &amp; Power BI </span></li>
 									<li class="d-flex"><span>Interest:</span> <span>Traveling With Family, Carrom, Listening Music</span></li>
 									
 								</ul>
@@ -353,9 +372,6 @@
 		</div>
     </section>
 
-
-
-	
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
@@ -504,8 +520,6 @@
     		</div>
     	</div>
     </section>
-
-   
 
     <section class="ftco-section" id="project-section">
 		<div class="container">
@@ -695,6 +709,16 @@
 				<!-- Example for one project -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
+						<a href="https://github.com/AAS786/Dice-game/blob/main/index.html" class="block-20 zoom-effect" style="background-image: url('images/Dicebg.jpg');">
+						</a>
+						<div class="text mt-3">
+							<h3 class="heading"><a href="https://aas786.github.io/Dice-game/">Dice Game click here to play</a></h3>
+							<p>Roll the dice with AI – let the smart system predict your win and add an extra twist to your game!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
 						<a href="https://github.com/AAS786/2048-Games/blob/main/index.html" class="block-20 zoom-effect" style="background-image: url('images/2048 preview.png');">
 						</a>
 						<div class="text mt-3">
@@ -745,111 +769,9 @@
 			    </div>
 		  </div>
 		  
-		  <!-- <div class="row">
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/MYSQL---Health_Care-Project" class="block-20 zoom-effect" style="background-image: url('images/health_care.png');">
-				</a>
-				<div class="text mt-3">
+		  
+	</section>
 	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/MYSQL---Health_Care-Project">Health_Care-SQL Project </a></h3>
-				  <p>Developed a comprehensive SQL project for healthcare management, focusing on optimizing patient records, appointments, and billing systems.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry">
-				  <a href="https://github.com/AAS786/Power-bi---Adidas-Sales-Analysis" class="block-20 zoom-effect" style="background-image: url('images/adidas-ss.png');">
-				  </a>
-				  <div class="text mt-3">
-		
-					<h3 class="heading"><a href="https://github.com/AAS786/Power-bi---Adidas-Sales-Analysis"> Power-bi---Adidas-Sales-Analysis</a></h3>
-					<p>Adidas sales analysis in Power BI, utilizing data visualization and advanced analytics to reveal key sales trends and inform strategic decision-making.</p>
-				  </div>
-				</div>
-			  </div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry">
-				  <a href="https://github.com/AAS786/Crop-Recommedation-Machine-Learning/blob/main/Crop%20Recommendation-Copy1.ipynb" class="block-20 zoom-effect" style="background-image: url('images/crop.jpg');">
-				  </a>
-				  <div class="text mt-3">
-		
-					<h3 class="heading"><a href="https://github.com/AAS786/Crop-Recommedation-Machine-Learning/blob/main/Crop%20Recommendation-Copy1.ipynb">Crop-Recommedation-Machine-Learning </a></h3>
-					<p>Implemented a Crop Recommendation system using Machine Learning and developed a deployment page for seamless user access for decision-making to which seed need to ploughed.</p>
-				  </div>
-				</div>
-			  </div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry">
-				  <a href="https://github.com/AAS786/SQL-Railway-Ticket-Database.sql" class="block-20 zoom-effect" style="background-image: url('images/trains.jpeg');">
-				  </a>
-				  <div class="text mt-3">
-		
-					<h3 class="heading"><a href="https://github.com/AAS786/SQL-Railway-Ticket-Database.sql">Railway Ticket Data Analysis using SQL</a></h3>
-					<p>Analyzed Railway Ticket data using advanced SQL queries to identify gaps and increase business growth.</p>
-				  </div>
-				</div>
-			  </div>
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/Car-Price-prediction-ML-Project/blob/main/Car_Price_Model.ipynb" class="block-20 zoom-effect" style="background-image: url('images/car predict.jpg');">
-				</a>
-				<div class="text mt-3">
-	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/Car-Price-prediction-ML-Project/blob/main/Car_Price_Model.ipynb">Car Price Prediction ML</a></h3>
-				  <p>Developed an ML model to predict prices of various cars.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/Diwali-Sales-Analysis-with-Python/blob/main/Diwali-Sales-Data-Analysis.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-				</a>
-				<div class="text mt-3">
-	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/Diwali-Sales-Analysis-with-Python/blob/main/Diwali-Sales-Data-Analysis.ipynb">Data Analysis using Python Project for Beginners</a></h3>
-				  <p>Performed exploratory data analysis on Diwali sales data using Python to improve customer experience.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/Power-BI---Super-Store-Sales-Dashboard/blob/main/Super%20Sales%20Dashboard.pbix" class="block-20 zoom-effect" style="background-image: url('images/ds1 (1).png');">
-				</a>
-				<div class="text mt-3">
-	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/Power-BI---Super-Store-Sales-Dashboard/blob/main/Super%20Sales%20Dashboard.pbix">Power BI Sales Dashboard Project for Beginners</a></h3>
-				  <p>Designed a Power BI dashboard for a Super Store to track and analyze online sales data across India.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/Boat--Web-Scrapping/blob/main/Airpods%20web%20Scrapping.ipynb" class="block-20 zoom-effect" style="background-image: url('images/download (5).jpeg');">
-				</a>
-				<div class="text mt-3">
-	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/Boat--Web-Scrapping/blob/main/Airpods%20web%20Scrapping.ipynb">Web Scraping of Boat Airpods</a></h3>
-				  <p>Web scraping done with the help of NumPy, Pandas, and BeautifulSoup to predict future trends.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-			  <div class="blog-entry">
-				<a href="https://github.com/AAS786/Machine-Learning---Autism-Prediction/blob/main/Aututism-prediction.ipynb" class="block-20 zoom-effect" style="background-image: url('images/download (4).jpeg');">
-				</a>
-				<div class="text mt-3">
-	  
-				  <h3 class="heading"><a href="https://github.com/AAS786/Machine-Learning---Autism-Prediction/blob/main/Aututism-prediction.ipynb">Autism Prediction using Classification Model</a></h3>
-				  <p>Developed an ML model to predict autism and provide recommendations, emphasizing consultation with a doctor.</p>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div> -->
-	  </section>
-	  
-
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="container">
 		<div class="row d-md-flex align-items-center">
@@ -902,8 +824,6 @@
 			<!-- </div> -->
 		</div>
 	</section>
-
-
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
