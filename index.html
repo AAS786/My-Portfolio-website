@@ -3,6 +3,7 @@
   <head>
     <title>Asif Shaikh Portfolio</title>
     <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -69,7 +70,7 @@
 }
 
 #typing-animation:before {
-  content: "";
+  content: '';
   /* position: absolute; */
   top: 0;
   left: 0;
@@ -97,26 +98,6 @@
     width: 0;
   }
 }
-/* CSS for 3D rotation animation */
-@keyframes rotate {
-  from {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-  to {
-    transform: perspective(1000px) rotateY(360deg);
-  }
-}
-
-
-.rotate-animation {
-  animation: rotate 10s linear infinite;
-}
-
-/* Optional: Speed up on hover */
-.rotate-animation:hover {
-  animation: rotate 5s linear infinite;
-}
-
 
 /* Adjust image size */
 .one-third {
@@ -159,7 +140,104 @@
     height: auto;
     margin-right: 10px; /* Space between logo and text */
 }
+.boxes {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background: repeating-conic-gradient(
+        from var(--a),
+        #ff2770 0%,   /* Neon Pink */
+        #ff2770 33%,
+        #45f3ff 33%,  /* Neon Blue */
+        #45f3ff 66%,
+        #a4ff45 66%,  /* Neon Green */
+        #a4ff45 100%
+    );
+    animation: animate 4s linear infinite, glow 2s ease-in-out infinite alternate;
+    border-radius: 50%; /* Make it circular */
+    transition: transform 0.3s;
+    margin-bottom: 100px; /* You can reduce this value */
+    transform: translateY(-50px); /* Adjust the vertical position */
+}
 
+@keyframes animate {
+    0% {
+        --a: 0deg;
+    }
+    100% {
+        --a: 360deg;
+    }
+}
+  
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 60px #ff2770, /* Larger Neon Pink glow */
+                    0 0 80px #45f3ff, /* Larger Neon Blue glow */
+                    0 0 100px #ff45f0; /* Larger Neon Green glow */
+    }
+    100% {
+        box-shadow: 0 0 80px #ff2770, /* Even Larger Neon Pink glow */
+                    0 0 100px #45f3ff, /* Even Larger Neon Blue glow */
+                    0 0 120px #f345ff; /* Even Larger Neon Green glow */
+    }
+}
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@property --b {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 10px;
+}
+
+
+.boxes:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    box-shadow: 0 0 120px #ff2770, /* Glowing stronger on hover */
+                0 0 140px #45f3ff,
+                0 0 160px #a4ff45;
+}
+
+.boxes::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(
+        from var(--a),
+        #ff2770 0%,   /* Neon Pink */
+        #ff2770 33%,
+        #45f3ff 33%,  /* Neon Blue */
+        #45f3ff 66%,
+        #a4ff45 66%,  /* Neon Green */
+        #a4ff45 100%
+    );
+    animation: animate 4s linear infinite;
+    animation-delay: -1s;
+    border-radius: 50%; /* Make it circular */
+}
+  
+.boxes::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    background: #2d2d39;
+    border-radius: 50%; /* Make it circular */
+    border: 8px solid #25252b;
+
+    /* Adding the image */
+    background-image: url('images/my1.jpg');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Center the image */
+    
+    /* Adding an inner glow */
+    box-shadow: inset 0 0 30px #ff2770, Neon Pink inner glow
+                inset 0 0 40px #45f3ff, /* Neon Blue inner glow */
+                inset 0 0 50px #a4ff45; /* Neon Green inner glow */
+}
 
 
 
@@ -195,9 +273,10 @@
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/Picture31.png);">
+				<div class="boxes"></div>
+	          	<!-- <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/Picture31.png);">
 	          	 <div class="overlay"></div>
-	          	</div>
+	          	</div> -->
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '80%' }">
 		          	<div class="text">
 		          		<span class="subheading">Hello!</span>
@@ -266,7 +345,7 @@
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="images/Picture313.png" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="images/Picture31.png" class="img-fluid rounded b-shadow-a" alt="">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
@@ -590,17 +669,6 @@
 		  
 		  <div class="row">
 			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry">
-				  <a href="https://github.com/AAS786/Credit-Card-Fraud-Detetion/blob/main/Credit-Card-Fraud.ipynb" class="block-20 zoom-effect" style="background-image: url('images/credit_card_PNG391.png');">
-				  </a>
-				  <div class="text mt-3">
-		
-					<h3 class="heading"><a href="https://credit-card-fraud-detetion.streamlit.app/">Credit Card Fraud Detection-ML Project </a></h3>
-					<p>Build a machine learning model to detect credit card fraud based on transaction data, then deploy it using Streamlit for real-time predictions. Users input transaction details on a web interface, and the model flags fraudulent activity instantly.</p>
-				  </div>
-				</div>
-			  </div>
-			<div class="col-md-4 d-flex ftco-animate">
 			  <div class="blog-entry">
 				<a href="https://github.com/AAS786/MYSQL---Health_Care-Project" class="block-20 zoom-effect" style="background-image: url('images/health_care.png');">
 				</a>
@@ -628,7 +696,7 @@
 				  </a>
 				  <div class="text mt-3">
 		
-					<h3 class="heading"><a href="https://crop-recommedation-machine-learning-12.streamlit.app/">Crop-Recommedation-Machine-Learning </a></h3>
+					<h3 class="heading"><a href="https://github.com/AAS786/Crop-Recommedation-Machine-Learning/blob/main/Crop%20Recommendation-Copy1.ipynb">Crop-Recommedation-Machine-Learning </a></h3>
 					<p>Implemented a Crop Recommendation system using Machine Learning and developed a deployment page for seamless user access for decision-making to which seed need to ploughed.</p>
 				  </div>
 				</div>
@@ -650,7 +718,7 @@
 				</a>
 				<div class="text mt-3">
 	  
-				  <h3 class="heading"><a href="https://car-price-predictionappio-ltg6pxbzeuxvxcatxmr3am.streamlit.app/">Car Price Prediction ML</a></h3>
+				  <h3 class="heading"><a href="https://github.com/AAS786/Car-Price-prediction-ML-Project/blob/main/Car_Price_Model.ipynb">Car Price Prediction ML</a></h3>
 				  <p>Developed an ML model to predict prices of various cars.</p>
 				</div>
 			  </div>
@@ -694,7 +762,7 @@
 				</a>
 				<div class="text mt-3">
 	  
-				  <h3 class="heading"><a href="https://machine-learning---autism-prediction-7hf.streamlit.app/">Autism Prediction using Classification Model</a></h3>
+				  <h3 class="heading"><a href="https://github.com/AAS786/Machine-Learning---Autism-Prediction/blob/main/Aututism-prediction.ipynb">Autism Prediction using Classification Model</a></h3>
 				  <p>Developed an ML model to predict autism and provide recommendations, emphasizing consultation with a doctor.</p>
 				</div>
 			  </div>
@@ -720,11 +788,11 @@
 				<!-- Example for one project -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
-						<a href="https://github.com/AAS786/Fruit-Ninja" class="block-20 zoom-effect" style="background-image: url('images/fruit.jpg');">
+						<a href="https://github.com/AAS786/Dice-game/blob/main/index.html" class="block-20 zoom-effect" style="background-image: url('images/Dicebg.jpg');">
 						</a>
 						<div class="text mt-3">
-							<h3 class="heading"><a href="https://aas786.github.io/Fruit-Ninja/">Fruit Ninja Game click here to play</a></h3>
-							<p>Fruit Ninja is an addictive game where players swipe to slice flying fruits while avoiding bombs.</p>
+							<h3 class="heading"><a href="https://aas786.github.io/Dice-game/">Dice Game click here to play</a></h3>
+							<p>Roll the dice with AI – let the smart system predict your win and add an extra twist to your game!</p>
 						</div>
 					</div>
 				</div>
@@ -944,4 +1012,3 @@
     
   </body>
 </html>
-
