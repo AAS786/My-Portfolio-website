@@ -1,0 +1,28 @@
+/* Mobile Fix */
+
+@media (max-width: 767px) {
+
+  /* Circle size fix */
+  .boxes {
+    width: 260px !important;
+    height: 260px !important;
+    margin: 30px auto !important;
+    transform: none !important;
+  }
+
+  /* Stop text overlapping circle */
+  .one-forth {
+    position: relative !important;
+    z-index: 99 !important;
+    background: transparent !important;
+    padding: 15px !important;
+    margin-top: 280px !important;
+  }
+
+  /* Center everything */
+  .slider-text {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+}
