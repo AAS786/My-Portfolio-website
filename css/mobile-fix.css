@@ -1,0 +1,149 @@
+/* ============================================
+   MOBILE RESPONSIVE FIXES - Asif Portfolio
+   Add this in your <style> tag or save as
+   a separate CSS file and link it LAST
+   ============================================ */
+
+/* ---- Animated Circle (boxes) ---- */
+.boxes {
+  width: 280px !important;
+  height: 280px !important;
+  margin: 0 auto 40px auto !important;
+  transform: none !important;
+}
+
+@media (min-width: 768px) {
+  .boxes {
+    width: 380px !important;
+    height: 380px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .boxes {
+    width: 500px !important;
+    height: 500px !important;
+    transform: translateY(-50px) !important;
+    margin-bottom: 100px !important;
+  }
+}
+
+/* ---- Hero / Home Section ---- */
+#home-section .slider-item .row {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+#home-section .one-forth {
+  width: 100% !important;
+  padding: 0 15px;
+}
+
+#home-section h1 {
+  font-size: 2rem;
+}
+
+#home-section h2 {
+  font-size: 1.1rem;
+}
+
+#home-section .btn {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  padding: 10px 16px !important;
+}
+
+/* Stack buttons on small screens */
+@media (max-width: 480px) {
+  #home-section .d-flex.mt-3,
+  #home-section p a {
+    display: block !important;
+    width: fit-content;
+    margin: 6px auto !important;
+  }
+}
+
+/* ---- Typing Animation ---- */
+#typing-animation {
+  font-size: 20px !important;
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+@media (min-width: 768px) {
+  #typing-animation {
+    font-size: 26px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  #typing-animation {
+    font-size: 30px !important;
+  }
+}
+
+/* ---- About Section ---- */
+.about-mf .about-img img {
+  margin-left: 0 !important;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .img-about .row {
+    flex-direction: column;
+  }
+
+  .img-about .col-sm-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-info p {
+    font-size: 0.9rem;
+  }
+
+  .skill-mf .progress {
+    margin-bottom: 1rem;
+  }
+
+  #about-section .col-md-6.col-lg-7 {
+    padding-left: 15px !important;
+    padding-top: 20px;
+  }
+}
+
+/* ---- Resume Cards ---- */
+@media (max-width: 767px) {
+  .resume-wrap {
+    margin-bottom: 20px;
+  }
+}
+
+/* ---- General Container fix ---- */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  h1.big, h1.big-2 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---- Navbar fix on mobile ---- */
+@media (max-width: 991px) {
+  .ftco_navbar .navbar-collapse {
+    background-color: #1a1a2e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+}
